@@ -1,0 +1,137 @@
+
+/* Neural UI Elements */
+.neural-card {
+  @apply relative overflow-hidden rounded-lg border border-border/40 bg-card/80 backdrop-blur-sm shadow-md transition-all duration-300;
+}
+
+.neural-card:hover {
+  @apply border-primary/30 shadow-glow;
+}
+
+.neural-pulse-light {
+  @apply relative bg-background/60 backdrop-blur-md overflow-hidden;
+  box-shadow: 0 0 15px 0 rgba(var(--primary-rgb), 0.2);
+}
+
+.neural-pulse-light:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to right, 
+    hsl(var(--primary)), 
+    hsl(var(--secondary)), 
+    hsl(var(--accent))
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: pulse-opacity 3s infinite alternate;
+}
+
+@keyframes pulse-opacity {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.8; }
+}
+
+/* Reflective surfaces */
+.reflective-surface {
+  @apply relative overflow-hidden rounded-lg;
+  background: linear-gradient(135deg, 
+    hsl(var(--card)/90%), 
+    hsl(var(--card)/70%)
+  );
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.3),
+    0 0 15px -5px hsla(var(--primary), 0.2);
+}
+
+.reflective-surface:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.05)
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+/* Flow Patterns */
+.flow-pattern {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.flow-pattern:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='currentColor' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glass card with custom shadow */
+.glass-card {
+  @apply rounded-lg bg-card/30 backdrop-blur-md border border-border/50 shadow-lg transition-all duration-300 hover:shadow-xl;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.glass-card:hover {
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+/* Gradient text for headings */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-flow;
+  background-size: 200% auto;
+}
+
+/* Animated border for focus states */
+.animated-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.animated-border:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary)),
+    hsl(var(--accent)),
+    hsl(var(--primary))
+  );
+  background-size: 300% 100%;
+  animation: border-rotate 5s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes border-rotate {
+  0% { background-position: 0% 0; }
+  100% { background-position: 300% 0; }
+}

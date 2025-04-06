@@ -1,0 +1,122 @@
+.weaver-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    linear-gradient(45deg, 
+      hsla(260, 100%, 10%, 0.8),
+      hsla(190, 100%, 10%, 0.8)
+    ),
+    repeating-linear-gradient(
+      45deg,
+      hsla(260, 100%, 70%, 0.1) 0px,
+      hsla(260, 100%, 70%, 0.1) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      hsla(190, 100%, 60%, 0.1) 0px,
+      hsla(190, 100%, 60%, 0.1) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+}
+
+.weaver-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      circle at 50% 50%,
+      hsla(260, 100%, 70%, 0.15),
+      transparent 70%
+    );
+  filter: blur(30px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.neural-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, hsla(260, 100%, 70%, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, hsla(190, 100%, 60%, 0.1) 25%, transparent 25%);
+  background-size: 20px 20px;
+  animation: neural-flow 20s linear infinite;
+}
+
+@keyframes neural-flow {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+/* Apply futuristic card styles */
+.card {
+  background: hsla(260, 15%, 15%, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(260, 100%, 70%, 0.2);
+  box-shadow: 
+    0 0 20px hsla(260, 100%, 70%, 0.1),
+    inset 0 0 20px hsla(190, 100%, 60%, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: hsla(260, 100%, 70%, 0.4);
+  box-shadow: 
+    0 0 30px hsla(260, 100%, 70%, 0.2),
+    inset 0 0 30px hsla(190, 100%, 60%, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Futuristic button styles */
+.button {
+  background: linear-gradient(
+    45deg,
+    hsla(260, 100%, 70%, 0.8),
+    hsla(190, 100%, 60%, 0.8)
+  );
+  border: none;
+  box-shadow: 0 0 15px hsla(260, 100%, 70%, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(
+    45deg,
+    hsla(260, 100%, 70%, 1),
+    hsla(190, 100%, 60%, 1)
+  );
+  box-shadow: 0 0 20px hsla(260, 100%, 70%, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Futuristic text effects */
+.text-glow {
+  color: hsl(260, 20%, 98%);
+  text-shadow: 0 0 10px hsla(260, 100%, 70%, 0.5);
+}
+
+.heading-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(260, 100%, 70%),
+    hsl(190, 100%, 60%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}

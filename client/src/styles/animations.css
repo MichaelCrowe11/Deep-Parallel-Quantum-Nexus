@@ -1,0 +1,148 @@
+
+/* Neural Network Animation */
+.neural-network {
+  position: relative;
+  overflow: hidden;
+}
+
+.neural-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: hsl(200, 100%, 60%);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.neural-connection {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, hsl(200, 100%, 60%), hsl(180, 100%, 65%));
+  transform-origin: left center;
+  opacity: 0.3;
+}
+
+/* Thought Flow Animation */
+.thought-flow {
+  position: relative;
+  overflow: hidden;
+}
+
+.thought-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: hsl(220, 100%, 50%);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Brand Gradients */
+.brand-gradient {
+  background: linear-gradient(-45deg, 
+    hsl(200, 100%, 60%),
+    hsl(220, 100%, 50%),
+    hsl(180, 100%, 65%),
+    hsl(240, 100%, 70%)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hexagonal Pattern */
+.hexagon-pattern {
+  background-color: hsl(220, 15%, 8%);
+  background-image: 
+    linear-gradient(to right, hsla(220, 100%, 50%, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(220, 100%, 50%, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+.hexagon-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    hsla(200, 100%, 60%, 0.1) 0%,
+    transparent 60%
+  );
+  animation: pulse 8s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Wave Effect */
+.wave-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    hsla(200, 100%, 60%, 0.05) 50%,
+    transparent 100%
+  );
+  transform: translateY(0%);
+  animation: wave 10s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Neural Pulse */
+.neural-pulse {
+  animation: neural-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neural-pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsla(220, 100%, 50%, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsla(220, 100%, 50%, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsla(220, 100%, 50%, 0);
+  }
+}

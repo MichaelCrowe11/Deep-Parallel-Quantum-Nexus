@@ -1,0 +1,41 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './brand.css';
+
+@layer base {
+  :root {
+    --background: hsl(260 10% 10%);
+    --foreground: hsl(260 20% 98%);
+    
+    --primary: hsl(260 100% 70%);
+    --primary-foreground: hsl(0 0% 100%);
+    
+    --secondary: hsl(190 100% 60%);
+    --secondary-foreground: hsl(0 0% 100%);
+    
+    --accent: hsl(320 100% 70%);
+    --accent-foreground: hsl(0 0% 100%);
+    
+    --muted: hsl(260 10% 20%);
+    --muted-foreground: hsl(260 20% 80%);
+    
+    --border: hsl(260 20% 20%);
+    --input: hsl(260 20% 20%);
+    --ring: hsl(260 100% 70%);
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

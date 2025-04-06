@@ -1,0 +1,260 @@
+:root {
+  /* Primary Colors */
+  --color-deep-ocean: hsl(200, 100%, 60%);
+  --color-neural-current: hsl(220, 100%, 50%);
+  --color-insight-aqua: hsl(180, 100%, 65%);
+
+  /* Supporting Colors */
+  --color-abyss-canvas: hsl(220, 15%, 8%);
+  --color-surface-grey: hsl(220, 20%, 98%);
+
+  /* Processing Gradient */
+  --gradient-processing: linear-gradient(
+    135deg,
+    var(--color-deep-ocean),
+    var(--color-neural-current),
+    var(--color-insight-aqua)
+  );
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Brand Font */
+  --font-brand: var(--font-primary);
+  --font-brand-spacing: 0.02em;
+  --font-brand-stylized-spacing: 0.04em;
+  --font-brand-minimal-spacing: 0.25em;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Line Heights */
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+  --line-height-brand: 1.1;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-primary);
+  line-height: var(--line-height-body);
+  background-color: var(--color-abyss-canvas);
+  color: var(--color-surface-grey);
+}
+
+/* Color Classes */
+.bg-deep-ocean {
+  background-color: var(--color-deep-ocean);
+}
+
+.bg-neural-current {
+  background-color: var(--color-neural-current);
+}
+
+.bg-insight-aqua {
+  background-color: var(--color-insight-aqua);
+}
+
+.text-deep-ocean {
+  color: var(--color-deep-ocean);
+}
+
+.text-neural-current {
+  color: var(--color-neural-current);
+}
+
+.text-insight-aqua {
+  color: var(--color-insight-aqua);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-weight: var(--font-weight-black);
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+}
+
+.subtitle {
+  font-weight: var(--font-weight-medium);
+}
+
+.detail-text {
+  font-weight: var(--font-weight-light);
+}
+
+/* Brand Elements */
+.brand-gradient {
+  background: var(--gradient-processing);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.brand-button {
+  background-color: var(--color-deep-ocean);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: var(--font-weight-medium);
+  transition: background-color 0.3s ease;
+}
+
+.brand-button:hover {
+  background-color: hsl(200, 100%, 55%);
+}
+
+.neural-button {
+  background-color: var(--color-neural-current);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: var(--font-weight-medium);
+  transition: background-color 0.3s ease;
+}
+
+.neural-button:hover {
+  background-color: hsl(220, 100%, 45%);
+}
+
+.insight-button {
+  background-color: var(--color-insight-aqua);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: var(--font-weight-medium);
+  transition: background-color 0.3s ease;
+}
+
+.insight-button:hover {
+  background-color: hsl(180, 100%, 60%);
+}
+
+/* Card & UI Elements */
+.brand-card {
+  background-color: hsl(220, 15%, 12%);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brand-card-header {
+  border-bottom: 1px solid hsl(220, 20%, 20%);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Icon Styling */
+.brand-icon {
+  stroke-width: 2px;
+  color: var(--color-surface-grey);
+}
+
+.brand-icon-primary {
+  color: var(--color-deep-ocean);
+}
+
+.brand-icon-neural {
+  color: var(--color-neural-current);
+}
+
+.brand-icon-insight {
+  color: var(--color-insight-aqua);
+}
+
+/* Hexagonal Grid Pattern */
+.hexagon-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.hexagon-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.05' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Deep Parallel Brand Font Styles */
+.deep-parallel-font {
+  font-family: var(--font-brand);
+  line-height: var(--line-height-brand);
+  letter-spacing: var(--font-brand-spacing);
+}
+
+.deep-parallel-font-standard {
+  font-feature-settings: "kern", "liga";
+}
+
+.deep-parallel-font-stylized {
+  letter-spacing: var(--font-brand-stylized-spacing);
+  font-feature-settings: "kern", "liga", "dlig";
+}
+
+.deep-parallel-font-minimal {
+  text-transform: uppercase;
+  letter-spacing: var(--font-brand-minimal-spacing);
+  font-feature-settings: "kern", "case", "ss01";
+}
+
+/* Stylized Brand Elements */
+.deep-parallel-stylized-underline {
+  position: relative;
+}
+
+.deep-parallel-stylized-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient-processing);
+  transform: scaleX(0.8);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.deep-parallel-stylized-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Brand pattern background */
+.deep-parallel-bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.deep-parallel-bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(0, 153, 255, 0.05) 0%, transparent 25%),
+    radial-gradient(circle at 70% 65%, rgba(0, 102, 255, 0.05) 0%, transparent 30%),
+    radial-gradient(circle at 90% 35%, rgba(0, 204, 255, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 15% 85%, rgba(0, 153, 255, 0.05) 0%, transparent 15%);
+  z-index: -1;
+}

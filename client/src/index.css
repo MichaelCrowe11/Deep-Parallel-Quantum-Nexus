@@ -1,0 +1,164 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './styles/components.css';
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 220 20% 98%;
+    --card: 220 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 200 100% 60%;
+    --primary-rgb: 0, 191, 255;
+    --primary-foreground: 220 6% 10%;
+    --secondary: 220 100% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 180 100% 65%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 220 4% 16%;
+    --muted-foreground: 220 5% 65%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 4% 16%;
+    --input: 220 4% 16%;
+    --ring: 200 100% 60%;
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground min-h-screen;
+    text-rendering: optimizeLegibility;
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      hsl(220 15% 9%) 0%,
+      hsl(220 15% 8%) 100%
+    );
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-medium;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 py-16 sm:py-24;
+  }
+  
+  .neural-link {
+    @apply relative text-primary hover:text-primary/80 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  
+  .neural-bg {
+    background-image: radial-gradient(circle at 10% 20%, rgba(var(--primary), 0.1) 0%, transparent 20%),
+                     radial-gradient(circle at 90% 50%, rgba(var(--secondary), 0.07) 0%, transparent 30%),
+                     radial-gradient(circle at 40% 80%, rgba(var(--accent), 0.05) 0%, transparent 40%);
+  }
+  
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  .hover-glow {
+    @apply hover:shadow-[0_0_15px_rgba(var(--primary),.4)] transition-shadow duration-300;
+  }
+  
+  .shadow-glow-primary {
+    box-shadow: 0 0 20px rgba(43, 135, 255, 0.5);
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-[#2b87ff] via-[#6d56f9] to-[#00d8ff] bg-clip-text text-transparent;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation utility classes */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.5s ease-in-out forwards;
+  }
+  
+  .animate-neural-pulse {
+    animation: neuralPulse 2s infinite ease-in-out;
+  }
+  
+  .animate-flow-line {
+    animation: flowLine 3s infinite linear;
+  }
+}
+
+@keyframes neuralPulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--primary), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--primary), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--primary), 0); }
+}
+
+@keyframes flowLine {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
